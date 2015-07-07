@@ -1,0 +1,193 @@
+@import "variables.scss";
+@import "../stylesheets/bootstrap.scss";
+@import "../fonts/peaxdraw/peaxdrawicons.scss";
+
+/********************************************
+*                 General                   *
+*********************************************/
+
+#pwdd {
+	color: $black;
+	font-size: 1.6em;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.container-fluid {
+	margin: 0;
+	padding: 0;
+}
+
+.pwdd-container {
+	@media (min-width: 768px) {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+	margin-left:60px;
+}
+
+.pwdd-section-wrapper {
+	padding: 100px 0;
+}
+
+canvas {
+	width: 100%;
+}
+
+.pwdd-title {
+	font-size: 5em;
+	@media (max-width: 768px) {
+		font-size: 2.5em;
+	}
+}
+
+.orange {
+	color: $orange;
+}
+
+.center {
+	text-align: center;
+}
+
+.pwdd-inline {
+	display: inline;
+}
+
+.pwdd-m20 {
+	margin-top: 20px;
+}
+
+.icon-big {
+	font-size: 12em;
+	color: $orange;
+}
+
+.pwdd-tooltip {
+	color: $orange;
+	&:hover {
+		color: $dark-grey;
+		text-decoration: none;
+	}
+}
+
+.tooltip-arrow {
+	border-top-color: $dark-grey;
+}
+
+.tooltip-inner {
+	background-color: $dark-grey;
+}
+
+.icon-sbig {
+	font-size: 18em;
+	color: $medium-blue;
+}
+
+.list-group-item {
+	border: 1px solid $dark-blue;
+	.badge {
+		background-color: $dark-blue;
+	}
+}
+
+/********************************************
+*                 Navbar                    *
+*********************************************/
+
+#pwdd-side-navbar {
+	width: 50px;
+	height: 100%;
+}
+
+#navbar {
+	@media (min-width: 768px) {
+		margin-top: 100px;
+	}
+}
+
+.navbar-inverse {
+	background-color: $orange;
+	.navbar-nav {
+		> li {
+			width: 100%;
+			a {
+				line-height: 3.5em;
+				span {
+					font-size: 1.4em;
+				}
+			}
+		}
+		> .active {
+			a {
+				background-color: $dark-grey;
+				&:hover {
+					background-color: $dark-blue;
+				}
+				&:focus {
+					background-color: $dark-blue;
+				}
+			}
+		}
+	}
+}
+
+/********************************************
+*                 Opening                    *
+*********************************************/
+
+#icon-open {
+	font-size: 7em;
+	font-weight: lighter;
+	line-height: 0.3em;
+}
+
+#pwdd-open-middle {
+	h1 {
+		img {
+			@media (min-width: 768px) {
+				margin: 20% auto;
+			}
+		}
+	}
+}
+
+#open {
+	background: url('../images/code.jpg') no-repeat fixed;
+	height: 100vh;
+	@include background-size(cover);
+}
+
+/********************************************
+*                 Skills                    *
+*********************************************/
+#skills {
+	background-color: $white;
+}
+
+/********************************************
+*                 About                     *
+*********************************************/
+
+#about {
+	background-color: $dark-blue;
+}
+
+/********************************************
+*                 Portfolio                 *
+*********************************************/
+
+#portfolio {
+	background-color: $light-blue;
+}
+
+#pwdd-row-portfolio {
+	margin-top: 50px;
+}
+
+.pwdd-portfolio-desc {
+	background-color: $white;
+	margin-top: -10px;
+	max-width: 224px;
+	font-size: 1em;
+	margin-bottom: 20px;
+}
+
