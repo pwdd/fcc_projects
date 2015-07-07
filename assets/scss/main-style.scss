@@ -56,6 +56,10 @@ canvas {
 	margin-top: 20px;
 }
 
+.pwdd-m40 {
+	margin-top: 40px;
+}
+
 .icon-big {
 	font-size: 12em;
 	color: $orange;
@@ -183,11 +187,104 @@ canvas {
 	margin-top: 50px;
 }
 
+.pwdd-portfolio-item {
+	cursor: pointer;
+}
 .pwdd-portfolio-desc {
 	background-color: $white;
-	margin-top: -10px;
 	max-width: 224px;
 	font-size: 1em;
 	margin-bottom: 20px;
+	padding: 5px;
 }
+
+.icon-portfolio {
+	color: $orange;
+	font-size: 10em;
+	line-height: 0.5em;
+	margin-bottom: 29px;
+}
+
+/********************************************
+*                 Modals                    *
+*********************************************/
+
+.pwdd-modal {
+	width: 90%;
+	max-width: 100%;
+	margin: 0 auto;
+	.modal-dialog {
+		margin: 0;
+		width: 100%;
+		.modal-header {
+			border-bottom: 0;
+		}
+	}
+}
+
+.close.center-close {
+	float: none;
+}
+
+.icon-close {
+	font-size: 2em;
+	color: $dark-blue;
+	&:hover {
+		color: $orange;
+	}
+}
+
+.no-radius {
+	border-radius: 0;
+}
+
+.pwdd-list-modal {
+    list-style: none;
+    padding:0;
+    margin:0;
+    li {
+    	padding-left: 1em;
+    	text-indent: -0.7em;
+    	&:before {
+    		content: "\d0";
+    		font-family: 'Flaticon';
+				font-size: 25px;
+				color: $orange;
+				padding-right: 10px;
+				vertical-align: middle;
+    	}
+    }
+}
+
+.pwdd-btn-dblue {
+	background-color: $dark-blue;
+	&:hover {
+		background-color: $orange;
+		a {
+			color: $dark-blue;
+		}
+	}
+	a {
+		color: $orange;
+		&:hover {
+			color: $dark-blue;
+			text-decoration: none;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
