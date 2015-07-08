@@ -52,6 +52,10 @@ canvas {
 	color: $white;
 }
 
+.dark-blue {
+	color: $dark-blue;
+}
+
 .center {
 	text-align: center;
 }
@@ -98,6 +102,15 @@ canvas {
 	border: 1px solid $dark-blue;
 	.badge {
 		background-color: $dark-blue;
+	}
+}
+
+.pwdd-link {
+	font-weight: bold;
+	color: $dark-blue;
+	&:hover {
+		text-decoration: none;
+		color: $orange;
 	}
 }
 
