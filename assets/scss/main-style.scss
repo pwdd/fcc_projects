@@ -60,6 +60,10 @@ canvas {
 	text-align: center;
 }
 
+.pwdd-relative {
+	position: relative;
+}
+
 .pwdd-inline {
 	display: inline;
 }
@@ -166,13 +170,9 @@ canvas {
 }
 
 #pwdd-open-middle {
-	h1 {
-		img {
-			@media (min-width: 768px) {
-				margin: 20% auto;
-			}
-		}
-	}
+	position: absolute;
+	top: 40%;
+	left: 20%;
 }
 
 #open {
@@ -254,6 +254,15 @@ canvas {
 	}
 }
 
+.icon-close-sm {
+	font-size: 1.6em;
+	line-height: 0.9em;
+	color: $orange;
+	&:hover {
+		color: $white;
+	}
+}
+
 .no-radius {
 	border-radius: 0;
 }
@@ -293,7 +302,9 @@ canvas {
 	}
 }
 
-
+.pwdd-btn-lblue {
+	background-color: $light-blue;
+}
 
 
 
