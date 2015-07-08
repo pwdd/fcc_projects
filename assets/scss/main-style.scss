@@ -27,6 +27,10 @@
 
 .pwdd-section-wrapper {
 	padding: 100px 0;
+	@media (max-width: 992px) {
+		margin-left: 70px;
+		margin-right: 20px;
+	}
 }
 
 canvas {
@@ -211,7 +215,6 @@ canvas {
 
 .pwdd-modal {
 	width: 90%;
-	max-width: 100%;
 	margin: 0 auto;
 	.modal-dialog {
 		margin: 0;
