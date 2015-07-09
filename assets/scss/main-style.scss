@@ -122,11 +122,19 @@ canvas {
 *                 Navbar                    *
 *********************************************/
 
-#pwdd-side-navbar {
-	@media (min-height: 590px) {
+@media (min-height: 590px) {
+	#pwdd-side-navbar {
 		width: 50px;
 		height: 100%;
 	}
+
+	.navbar-collapse.collapse {
+    display: block !important;
+  }
+
+  .navbar-toggle {
+    display: none !important;
+  }
 }
 
 .navbar-inverse {
@@ -183,9 +191,6 @@ canvas {
     .navbar-fixed-top {
         top: 0;
         border-width: 0 0 1px;
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
     }
     .navbar-nav {
         float: none!important;
