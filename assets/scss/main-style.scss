@@ -23,13 +23,12 @@ $screen-sm-min: 600px;
 		max-width: 900px;
 		margin: 0 auto;
 	}
-	margin-left:60px;
 }
 
 .pwdd-section-wrapper {
 	padding: 100px 0;
-	@media (max-width: 992px) {
-		margin-left: 70px;
+	@media (max-width: $screen-sm-min) {
+		margin-left: 20px;
 		margin-right: 20px;
 	}
 }
