@@ -27,7 +27,7 @@ $screen-sm-min: 600px;
 
 .pwdd-section-wrapper {
 	padding: 100px 0;
-	@media (max-width: $screen-sm-min) {
+	@media (max-height: 590px) {
 		margin-left: 20px;
 		margin-right: 20px;
 	}
@@ -58,6 +58,7 @@ canvas {
 
 .center {
 	text-align: center;
+	margin: 0 auto;
 }
 
 .pwdd-relative {
@@ -244,6 +245,7 @@ canvas {
 #open {
 	@media (min-width: 1024px) {
 		background: url('../images/code.jpg') no-repeat fixed 50%;
+		@include background-size(cover);
 	}
 	background: url('../images/code.jpg') no-repeat;
 	height: 100vh;
