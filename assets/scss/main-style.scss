@@ -242,7 +242,10 @@ canvas {
 }
 
 #open {
-	background: url('../images/code.jpg') no-repeat fixed;
+	@media (min-width: 1024px) {
+		background: url('../images/code.jpg') no-repeat fixed 50%;
+	}
+	background: url('../images/code.jpg') no-repeat;
 	height: 100vh;
 	@include background-size(cover);
 }
