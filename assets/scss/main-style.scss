@@ -31,6 +31,10 @@ $screen-sm-min: 600px;
 		margin-left: 20px;
 		margin-right: 20px;
 	}
+	@media (max-width: 991px) {
+		margin-left: 60px;
+		margin-right: 20px;
+	}
 }
 
 canvas {
