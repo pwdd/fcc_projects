@@ -11,6 +11,7 @@ $screen-sm-min: 600px;
 	color: $black;
 	font-size: 1.6em;
 	font-family: 'Ubuntu', sans-serif;
+	position: relative;
 }
 
 .container-fluid {
@@ -163,11 +164,29 @@ canvas {
 			> .active {
 				a {
 					background-color: $dark-grey;
+					color: $orange;
+					span {
+						span {
+							color: $orange;
+						}
+					}
 					&:hover {
 						background-color: $dark-blue;
+						color: $orange;
+						span {
+							span {
+								color: $orange;
+							}
+						}
 					}
 					&:focus {
 						background-color: $dark-blue;
+						color: $orange;
+						span {
+							span {
+								color: $orange;
+							}
+						}
 					}
 				}
 			}
