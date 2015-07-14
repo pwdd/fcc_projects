@@ -45,7 +45,7 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
   </head>
-  <body id="pwdd">
+  <body id="pwdd" data-spy="scroll" data-target="#pwdd-collapse">
     <!--PORTFOLIO MODALS-->
     <div class="modal pwdd-modal fade" role="dialog" aria-labelledby="premier" id="premier">
       <div class="modal-dialog" role="document">
@@ -526,7 +526,7 @@
           </button>
         </div>
 
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="pwdd-collapse">
           <ul class="nav navbar-nav pull-right">
             <li>
               <a href="#about">
@@ -978,6 +978,11 @@
             <p>It was build using HTML5, CSS3 compiled from Sass, JQuery, ChartJs, Webfont Loader and Bootstrap. The font icons were created using Flaticon. Images compressed with TinyPNG</p>
             <p>If you want to hire me, send me an email: </p>
             <p class="orange">ainapinto[at]gmail[dot]com</p>
+            <div class="pull-right">
+              <a href="http://github.com/pwdd">
+                <img id="pwdd-github" src="./assets/images/github.svg" alt="github account">
+              </a>
+            </div>
           </div>
         </div>
       </footer>
