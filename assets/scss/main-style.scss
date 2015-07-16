@@ -170,24 +170,6 @@ canvas {
 							color: $orange;
 						}
 					}
-					&:hover {
-						background-color: $dark-blue;
-						color: $orange;
-						span {
-							span {
-								color: $orange;
-							}
-						}
-					}
-					&:focus {
-						background-color: $dark-blue;
-						color: $orange;
-						span {
-							span {
-								color: $orange;
-							}
-						}
-					}
 				}
 			}
 		}
