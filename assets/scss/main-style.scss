@@ -32,6 +32,10 @@ $screen-sm-min: 600px;
 		margin-left: 20px;
 		margin-right: 20px;
 	}
+	@media (min-height: 591px) and (max-width: 992px) {
+		margin-left: 70px;
+		margin-right: 20px;
+	}
 }
 
 canvas {
@@ -244,7 +248,7 @@ canvas {
 }
 
 #open {
-	@media (min-width: 1024px) {
+	@media (min-width: 1025px) {
 		background: url('../images/code.jpg') no-repeat fixed 50%;
 		@include background-size(cover);
 	}
