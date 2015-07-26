@@ -34,7 +34,7 @@ var barData = {
 		{
 			fillColor : "#FEB41C",
 			strokeColor : "#4B5F6D",
-			data : [100,95,80,75,65,70]
+			data : [95,90,80,75,65,70]
 		}
 	]
 }; 
