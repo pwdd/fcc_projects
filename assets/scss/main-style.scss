@@ -124,6 +124,16 @@ canvas {
 	}
 }
 
+.pwdd-link-orange {
+	font-weight: bold;
+	color: $orange;
+	&:hover {
+		text-decoration: none;
+		color: $light-blue;
+	}
+}
+
+
 /********************************************
 *                 Navbar                    *
 *********************************************/
@@ -300,6 +310,13 @@ canvas {
 	font-size: 10em;
 	line-height: 0.5em;
 	margin-bottom: 29px;
+}
+
+/********************************************
+*              Work Experience              *
+*********************************************/
+#work-experience {
+	background-color: $dark-blue;
 }
 
 /********************************************
