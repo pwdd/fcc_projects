@@ -159,9 +159,9 @@ $(function() {
   });
 
   $('#play').click(function() {
+    changeImage();
     timeRunning = true;
     runningTimer = setInterval(timer, 1000);
-    changeImage();
   });
 
   $('#reset').click(function() {
