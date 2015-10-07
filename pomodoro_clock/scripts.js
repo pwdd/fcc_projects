@@ -10,6 +10,7 @@ $(function() {
   var breakTime = false;
 
   var timeRunning = false;
+  var paused = false;
   var runningTimer;
 
   var activeClasses = function() {
@@ -159,13 +160,19 @@ $(function() {
   });
 
   $('#play').click(function() {
-    changeImage();
-    timeRunning = true;
-    runningTimer = setInterval(timer, 1000);
+    if (timeRunning == false || paused == true) {
+      changeImage();
+      timeRunning = true;
+      paused = false;
+      runningTimer = setInterval(timer, 1000);
+    } else {
+      return;
+    }
   });
 
-  $('#reset').click(function() {
+  $('#pause').click(function() {
     timeRunning = true;
+    paused = true;
     clearInterval(runningTimer);
   });
 
