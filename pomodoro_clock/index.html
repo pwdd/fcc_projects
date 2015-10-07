@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-center">Start with</h1>
+
+      <ul class="list-inline text-center">
+        <li>
+          <button id="work" class="btn btn-primary">work</button>
+        </li>
+        <li>
+          <button id="break" class="btn btn-primary">break</button>
+        </li>
+      </ul>
+      
+      <ul class="list-inline text-center">
+        <li>
+          <span class="btn-group">
+            <span class="set btn btn-default" id="work-minus">-</span>
+            <span class="btn btn-warning" id="set-work">1</span>
+            <span class="set btn btn-default" id="work-plus">+</span>
+          </span>
+          <br>
+          work section length
+        </li>
+        <li>
+          <span class="btn-group">
+            <span class="set btn btn-default" id="break-minus">-</span>
+            <span class="btn btn-warning" id="set-break">1</span>
+            <span class="set btn btn-default" id="break-plus">+</span>
+          </span>
+          <br>
+          break section length
+        </li>
+      </ul>
+
+      <div id="image-box" class="text-center center-block">
+        <img id="image" class="hidden" src="">
+      </div>
+
+      <div id="timer" class="text-center center-block">
+        <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+        <ul class="list-inline hidden" id="controls">
+          <li id="play" class="fa fa-play"></li>
+          <li id="reset" class="fa fa-pause"></li>
+          <li id="stop" class="fa fa-stop"></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>

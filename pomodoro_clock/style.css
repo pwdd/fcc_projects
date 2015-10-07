@@ -1,0 +1,29 @@
+ul li {
+  margin: 20px;
+}
+
+.btn-danger {
+  box-shadow: 2px 2px 4px #333;
+}
+
+#set-work, #set-break {
+  font-size: 30px;
+}
+
+.set {
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#timer span {
+  font-size: 70px;
+}
+
+#play, #reset, #stop {
+  font-size: 40px !important;
+}
+
+.fa {
+  cursor: pointer;
+}
