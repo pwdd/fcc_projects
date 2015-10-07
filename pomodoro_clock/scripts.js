@@ -14,23 +14,32 @@ $(function() {
   var runningTimer;
 
   var activeClasses = function() {
-    if (none) {      
-      $('#work').removeClass('btn-danger');
+    if (none) {
       $('#work').addClass('btn-primary');
-      $('#break').removeClass('btn-danger');
+      $('#work').removeClass('btn-danger');
+      $('#work').removeClass('disabled');      
+      
       $('#break').addClass('btn-primary');
+      $('#break').removeClass('btn-danger');
+      $('#break').removeClass('disabled');
+      
       $('#controls').addClass('hidden');
-    } else if (work) {      
+
+    } else if (work) {
       $('#work').addClass('btn-danger');
       $('#work').removeClass('btn-primary');
-      $('#break').removeClass('btn-danger');
+      
       $('#break').addClass('btn-primary');
+      $('#break').removeClass('btn-danger');
+      
       $('#controls').removeClass('hidden');
     } else {
-      $('#work').removeClass('btn-danger');
-      $('#work').addClass('btn-primary');
       $('#break').addClass('btn-danger');
       $('#break').removeClass('btn-primary');
+
+      $('#work').addClass('btn-primary');      
+      $('#work').removeClass('btn-danger');
+
       $('#controls').removeClass('hidden');
     }
   }
@@ -165,6 +174,8 @@ $(function() {
       timeRunning = true;
       paused = false;
       runningTimer = setInterval(timer, 1000);
+      $('#work').addClass('disabled');
+      $('#break').addClass('disabled');
     } else {
       return;
     }
@@ -181,6 +192,8 @@ $(function() {
     clearInterval(runningTimer);
     $('#minutes').text("00");
     $('#seconds').text("00");
+    $('#work').removeClass('disabled');
+    $('#break').removeClass('disabled');
     none = true;
     changeImage();
     activeClasses();
