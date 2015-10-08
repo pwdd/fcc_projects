@@ -14,45 +14,48 @@
     <div class="row">
       <h1 class="text-center">Pomodoro Clock</h1>
 
-      <div class="text-center">
-        <h2><small>select how you would like to start the timer</small></h2>
+      <div class="text-center" id="select-time">
+        <h2><small>select the length of both section</small></h2>
+        <ul class="list-inline text-center">
+          <li>
+            <span class="btn-group">
+              <button class="set btn btn-default" id="work-minus">-</button>
+              <button class="btn btn-warning" id="set-work">25</button>
+              <button class="set btn btn-default" id="work-plus">+</button>
+            </span>
+            <br>
+            work section length
+          </li>
+          <li>
+            <span class="btn-group">
+              <button class="set btn btn-default" id="break-minus">-</button>
+              <button class="btn btn-warning" id="set-break">05</button>
+              <button class="set btn btn-default" id="break-plus">+</button>
+            </span>
+            <br>
+            break section length
+          </li>
+        </ul>
+        <button class="btn btn-success" id="selected-sections">OK</button>
       </div>
 
-      <ul class="list-inline text-center">
-        <li>
-          <button id="work" class="btn btn-primary">work</button>
-        </li>
-        <li>
-          <button id="break" class="btn btn-primary">break</button>
-        </li>
-      </ul>
-      
-      <ul class="list-inline text-center">
-        <li>
-          <span class="btn-group">
-            <span class="set btn btn-default" id="work-minus">-</span>
-            <span class="btn btn-warning" id="set-work">25</span>
-            <span class="set btn btn-default" id="work-plus">+</span>
-          </span>
-          <br>
-          work section length
-        </li>
-        <li>
-          <span class="btn-group">
-            <span class="set btn btn-default" id="break-minus">-</span>
-            <span class="btn btn-warning" id="set-break">05</span>
-            <span class="set btn btn-default" id="break-plus">+</span>
-          </span>
-          <br>
-          break section length
-        </li>
-      </ul>
+      <div class="text-center hidden" id="select-section">
+        <h2><small>select how you would like to start the timer</small></h2>
+        <ul class="list-inline text-center">
+          <li>
+            <button id="work" class="btn btn-primary">work</button>
+          </li>
+          <li>
+            <button id="break" class="btn btn-primary">break</button>
+          </li>
+        </ul>
+      </div>
 
       <div id="image-box" class="text-center center-block">
         <img id="image" class="hidden" src="">
       </div>
 
-      <div id="timer" class="text-center center-block">
+      <div id="timer" class="text-center center-block hidden">
         <span id="minutes">00</span>
         <span>:</span>
         <span id="seconds">00</span>
@@ -67,7 +70,7 @@
   </div>
   <footer class="footer">
     <div class="container">
-      <p class="text-muted">Zipline: Pomodoro Clock, <a href="http://freecodecamp.com">FreeCodeCamp</a> || Source code: <a href="github.com/pwdd/pwdd.github.io/pomodoro_clock"><span class="fa fa-github"></span></a></p>
+      <p class="text-muted">Zipline: Pomodoro Clock, <a href="http://freecodecamp.com">FreeCodeCamp</a> || Source code: <a href="github.com/pwdd/pwdd.github.io/pomodoro_clock"><span class="fa fa-github"></span></a><span class="pull-right btn btn-success" id="start-over">start over</span></p>
     </div>
   </footer>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

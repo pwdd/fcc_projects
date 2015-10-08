@@ -64,6 +64,8 @@ $(function() {
       changeImage();
       none = false;
       v = true;
+      changeImage();
+      runningTimer = setInterval(timer, 1000);
     };
   };
 
@@ -114,6 +116,11 @@ $(function() {
     };
   };
 
+  $('#selected-sections').click(function() {
+    $('#select-time').addClass('hidden');
+    $('#select-section').removeClass('hidden');
+  })
+
   $('#work-minus').click(function() {
     if (workLength > 0) {
       workLength--;
@@ -155,6 +162,7 @@ $(function() {
     $('#minutes').text(t);
     $('#seconds').text('00');
     activeClasses();
+    $('#timer').removeClass('hidden');
   });
 
   $('#break').click(function() {
@@ -166,6 +174,7 @@ $(function() {
     $('#minutes').text(t);
     $('#seconds').text('00');
     activeClasses();
+    $('#timer').removeClass('hidden');
   });
 
   $('#play').click(function() {
@@ -174,8 +183,6 @@ $(function() {
       timeRunning = true;
       paused = false;
       runningTimer = setInterval(timer, 1000);
-      $('#work').addClass('disabled');
-      $('#break').addClass('disabled');
     } else {
       return;
     }
@@ -188,15 +195,11 @@ $(function() {
   });
 
   $('#stop').click(function() {
-    timeRunning = false;
-    clearInterval(runningTimer);
-    $('#minutes').text("00");
-    $('#seconds').text("00");
-    $('#work').removeClass('disabled');
-    $('#break').removeClass('disabled');
-    none = true;
-    changeImage();
-    activeClasses();
+    location.reload();
   });
+
+  $('#start-over').click(function() {
+    location.reload();
+  })
 
 });
