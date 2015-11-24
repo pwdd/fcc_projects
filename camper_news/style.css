@@ -1,0 +1,44 @@
+.bordered {
+  border: 1px solid #ccc;
+  position: relative;
+  height: 100%
+}
+
+.posted-by {
+  padding: 5px;
+  text-align: center;
+}
+
+.pic {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pic img {
+  border-radius: 50%;
+}
+
+.meta {
+  margin-top: 12px;
+}
+
+@media (min-width: 768px) {
+  .meta {
+    font-size: 1.5em;
+  }
+}
+
+.date {
+  font-style: italic;
+  color: #ccc;
+}
+
+h3 a {
+  font-size: 0.7em;
+}
+
+@media (min-width: 768px) {
+  h3 a {
+    font-size: 1em;
+  }
+}

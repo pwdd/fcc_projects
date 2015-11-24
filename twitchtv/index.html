@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zipline: Use the Twitchtv JSON API </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-app="fccapp" ng-controller="MainController">
+  <div class="container text-center">
+    <form class="form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <input ng-model="searchBox" type="text" class="form-control" id="exampleInputAmount" placeholder="Search streamings">
+          <div class="input-group-addon"><span class="fa fa-search"></span></div>
+        </div>
+      </div>
+    </form>
+    
+    <section class="tab">
+      
+      <ul class="nav nav-tabs">
+        <li ng-class="{ active: isSet(1) }">
+          <a href ng-click="setTab(1)">All</a></li>
+        <li ng-class="{ active: isSet(2) }">
+          <a href ng-click="setTab(2)">Online</a></li>
+        <li ng-class="{ active: isSet(3) }">
+          <a href ng-click="setTab(3)">Offline</a></li>
+      </ul>
+      <div ng-show="isSet(1)">
+        <div class="row each-streamer" ng-repeat="entry in entries | filter: searchBox">
+          <div class="col-xs-2">
+            <img class="img-responsive" ng-src="{{entry.stream.channel.logo || entry.logo}}">
+          </div>
+          <div class="col-xs-8">
+            <h2>{{entry.stream.channel.display_name || entry.display_name}}</h2>
+            <div ng-show="entry.stream.channel.status">
+              <p><em>{{entry.stream.channel.game}}</em></p>
+            </div>
+          </div>
+          <div class="col-xs-2" ng-show="entry.stream">
+            <a href="{{entry.stream.channel.url}}">
+              <button class="btn btn-success">online</button>
+            </a>
+          </div>
+          <div class="col-xs-2" ng-show="entry.stream == null">
+            <a href="{{entry.url}}">
+              <button class="btn btn-danger">offline</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div ng-show="isSet(2)">
+        <div class="row each-streamer" ng-repeat="on in online | filter: searchBox">
+          <div class="col-xs-2">
+            <img class="img-responsive" ng-src="{{on.stream.channel.logo}}">
+          </div>
+          <div class="col-xs-8">
+            <h2>{{on.stream.channel.display_name || on.display_name}}</h2>
+            <div ng-show="on.stream.channel.status">
+              <p><em>{{on.stream.channel.game}}</em></p>
+            </div>
+          </div>
+          <div class="col-xs-2">
+            <a href="{{on.stream.channel.url}}">
+              <button class="btn btn-success">online</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div ng-show="isSet(3)">
+        <div class="row each-streamer" ng-repeat="off in offline | filter: searchBox">
+          <div class="col-xs-2">
+            <img class="img-responsive" ng-src="{{off.logo}}">
+          </div>
+          <div class="col-xs-8">
+            <h2>{{off.display_name}}</h2>
+          </div>
+          <div class="col-xs-2">
+            <a href="{{entry.url}}">
+              <button class="btn btn-danger">offline</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

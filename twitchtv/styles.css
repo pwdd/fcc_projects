@@ -1,0 +1,12 @@
+form {
+  margin-top: 50px;
+}
+
+#search-box {
+  width: 300px;
+}
+
+.each-streamer {
+  padding: 30px;
+  border: 1px solid #ccc;
+}

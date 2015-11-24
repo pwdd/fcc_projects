@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zipline: Use the Twitchtv JSON API </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="camperNews" ng-controller="NewsController">
+
+  <div class="container">
+    <h1 class="text-center">Zipline: Use the Twitchtv JSON API</h1>
+    <p class="text-center"><a href="http://freecodecamp.com">FreeCodeCamp</a> project</p>
+    <p class="text-center"><em>Description: Use FreeCodeCamp API to get the latest and 'hottest' links shared by students</em></p>
+    <p class="text-center">Source code at <a href="https://github.com/pwdd/camper_news">Github</a></p>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3" ng-repeat="item in news | orderBy: '-upVotes'">
+        <div class="row bordered">
+          <div class="col-sm-3 col-xs-5 pic">
+            <img class="img-responsive" ng-src="{{item.author.picture}}" alt="camper {{item.author.username}}">
+            <div class="posted-by">
+              Posted by <em>{{item.author.username}}</em>
+            </div>
+          </div>
+          <div class="col-sm-9 col-xs-7">
+            <h3>
+              <a href="{{item.link}}" target="_blank">{{item.storyLink}}</a>
+            </h3>
+            <p class="meta">
+              <span class="fa fa-thumbs-o-up"></span> 
+              {{item.upVotes.length}} | <span class="date"><small>Posted on {{item.timePosted | date: 'yyyy-MM-dd'}}</small></span>
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
