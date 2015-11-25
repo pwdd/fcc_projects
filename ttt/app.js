@@ -75,10 +75,15 @@ var Board = function() {
       };
     };
 
-    $scope.setCellVal = function(pos) {
+    $scope.setCellVal = function(pos, human) {
       if (board.canMove(pos)) {
-        $scope.board[pos].val = $scope.human.symbol;
-        board.state[pos] = -1;
+        if (human) {
+          $scope.board[pos].val = $scope.human.symbol;
+          board.state[pos] = -1;
+        } else {
+          $scope.board[pos].val = $scope.computer.symbol;
+          board.state[pos] = 1;
+        }
       };
     };
 
