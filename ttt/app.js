@@ -48,6 +48,8 @@ var Board = function() {
     [2, 4, 6]
   ];
 
+  this.winningCombo = null;
+
   this.canMove = function(pos) {
     return this.state[pos] === undefined;
   };
@@ -60,7 +62,6 @@ var Board = function() {
     }
     return true;
   };
-
 };
 
 /*
@@ -86,15 +87,17 @@ var Board = function() {
     };
 
     $scope.setCellVal = function(pos, isComputer) {
-      if (board.canMove(pos)) {
-        if (!isComputer) {
-          $scope.board[pos].val = $scope.human.symbol;
-          board.state[pos] = -1;
-        } else {
-          $scope.board[pos].val = $scope.computer.symbol;
-          board.state[pos] = 1;
+      if ($scope.human.symbol != undefined) {
+        if (board.canMove(pos)) {
+          if (!isComputer) {
+            $scope.board[pos].val = $scope.human.symbol;
+            board.state[pos] = -1;
+          } else {
+            $scope.board[pos].val = $scope.computer.symbol;
+            board.state[pos] = 1;
+          }
         }
-      };
+      }
     };
 
     $scope.computerMove = function() {
@@ -104,7 +107,31 @@ var Board = function() {
       };
     };
 
+    $scope.checkWinner = function() {
+      var h, c, x;
 
+      for (var combo = 0; combo < board.wins.length; combo++) {
+        c = h = board.COMBOSIZE;
+        for (var w = 0; w < board.wins[combo].length; w++) {
+          x = board.wins[combo][w];
+          if (board.state[x] > 0 && board.state[x] != undefined) {
+            c--;
+          }
+          if (board.state[x] < 0 && board.state[x] != undefined) {
+            h--;
+            console.log(h);
+          }
+        }
+        if (c === 0) {
+          board.winningCombo = board.wins[combo];
+          return 1;
+        }
+        if (h === 0) {
+          board.winningCombo = board.wins[combo];
+          return -1;
+        }
+      }
+    };
 
   }]);
 
