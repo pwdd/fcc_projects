@@ -13,7 +13,7 @@
   <![endif]-->
   <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
-  <title></title>
+  <title>Zipline: Build a Tic Tac Toe Game</title>
 </head>
 <body>
 
@@ -24,11 +24,6 @@
         <h1>Zipline: Build a Tic Tac Toe Game</h1>
         <p><a href="http://freecodecamp.com">FreeCodeCamp</a> project</p>
         <p>Source code at <a href="">Github</a></p>
-      </div>
-
-      <div id="result">
-        <div>{{finalMessage}}</div>
-        <div>{{winningCombo}}</div>
       </div>
 
       <div class="modal fade" id="choice">
@@ -55,6 +50,10 @@
         <ul class="list-inline" id="board">
           <li class="{{cell.win}}"ng-repeat="cell in visualBoard" ng-class="{{cell.css}}" ng-click="setCellVal(cell.pos, false); computerMove(); addWinCss()">{{cell.val}}</li>
         </ul>
+      </div>
+
+      <div id="result">
+        <div id="fancy"><h2>{{finalMessage}}</h2></div>
       </div>
     
     </div>

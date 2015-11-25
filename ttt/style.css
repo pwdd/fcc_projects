@@ -95,3 +95,7 @@
 li.win {
   color: red;
 }
+
+#fancy {
+  font-family: 'Rock Salt', cursive;
+}
