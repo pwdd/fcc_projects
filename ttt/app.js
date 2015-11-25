@@ -51,6 +51,16 @@ var Board = function() {
   this.canMove = function(pos) {
     return this.state[pos] === undefined;
   };
+
+  this.isFull = function() {
+    for (var i = this.state.length - 1; i >= 0; i--) {
+      if (this.state[i] == undefined) {
+        return false;
+      }
+    }
+    return true;
+  };
+
 };
 
 /*
@@ -75,9 +85,9 @@ var Board = function() {
       };
     };
 
-    $scope.setCellVal = function(pos, human) {
+    $scope.setCellVal = function(pos, isComputer) {
       if (board.canMove(pos)) {
-        if (human) {
+        if (!isComputer) {
           $scope.board[pos].val = $scope.human.symbol;
           board.state[pos] = -1;
         } else {
@@ -86,6 +96,15 @@ var Board = function() {
         }
       };
     };
+
+    $scope.computerMove = function() {
+      pos = 3; // this will be set by search 
+      if (board.canMove(pos)) {
+        $scope.setCellVal(pos, true);
+      };
+    };
+
+
 
   }]);
 

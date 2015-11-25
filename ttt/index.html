@@ -55,7 +55,7 @@
         
       <div id="game">
         <ul class="list-inline" id="board">
-          <li ng-repeat="cell in board" ng-class="{{cell.css}}" ng-click="setCellVal(cell.pos, true)">{{cell.val}}</li>
+          <li ng-repeat="cell in board" ng-class="{{cell.css}}" ng-click="setCellVal(cell.pos, false); computerMove()">{{cell.val}}</li>
         </ul>
       </div>
     
