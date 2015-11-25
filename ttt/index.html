@@ -27,10 +27,8 @@
       </div>
 
       <div id="result">
-        <em>now it is only for debugging purposes</em>
-        <div>{{human.symbol}}</div>
-        <div>{{computer.symbol}}</div>
-        <div>{{board}}</div>
+        <div>{{finalMessage}}</div>
+        <div>{{winningCombo}}</div>
       </div>
 
       <div class="modal fade" id="choice">
@@ -55,7 +53,7 @@
         
       <div id="game">
         <ul class="list-inline" id="board">
-          <li ng-repeat="cell in board" ng-class="{{cell.css}}" ng-click="setCellVal(cell.pos, false); computerMove(); checkWinner()">{{cell.val}}</li>
+          <li class="{{cell.win}}"ng-repeat="cell in visualBoard" ng-class="{{cell.css}}" ng-click="setCellVal(cell.pos, false); computerMove(); addWinCss()">{{cell.val}}</li>
         </ul>
       </div>
     

@@ -92,6 +92,6 @@
   border: 1px solid #fff;
 }
 
-.winning-pos span {
+li.win {
   color: red;
 }
