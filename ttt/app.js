@@ -62,6 +62,7 @@ var Board = function() {
     }
     return true;
   };
+  
 };
 
 /*
@@ -87,7 +88,7 @@ var Board = function() {
     };
 
     $scope.setCellVal = function(pos, isComputer) {
-      if ($scope.human.symbol != undefined) {
+      if ($scope.human.symbol != undefined && !$scope.checkWinner()) {
         if (board.canMove(pos)) {
           if (!isComputer) {
             $scope.board[pos].val = $scope.human.symbol;
@@ -101,8 +102,8 @@ var Board = function() {
     };
 
     $scope.computerMove = function() {
-      pos = 3; // this will be set by search 
-      if (board.canMove(pos)) {
+      pos = $scope.search(0, 1, -100, 100);
+      if (board.canMove(pos) && !board.isFull()) {
         $scope.setCellVal(pos, true);
       };
     };
@@ -119,7 +120,6 @@ var Board = function() {
           }
           if (board.state[x] < 0 && board.state[x] != undefined) {
             h--;
-            console.log(h);
           }
         }
         if (c === 0) {
@@ -132,6 +132,44 @@ var Board = function() {
         }
       }
     };
+
+  /*
+   * negamax search with alpha beta pruning
+   * base on this: http://www.hamedahmadi.com/gametree/
+   */
+  $scope.search = function(depth, currentPlayer, alpha, beta) {
+    var maxDepth = 6;
+    var infinity = 100;
+    var i = board.BOARDSIZE;
+    var min = -infinity;
+    var max, value, next, undefinedValue;
+    if (value = $scope.checkWinner() || depth > maxDepth) {
+      return value * currentPlayer;
+    }
+    if (maxDepth > depth) {
+      while(i--) {
+        if (!board.state[i]) {
+          board.state[i] = currentPlayer;
+          value = - $scope.search(depth + 1, -currentPlayer, -beta, -alpha);
+          board.state[i] = undefined;
+          if (max == undefined || value > max) {
+            max = value;
+          }
+          if (value > alpha) {
+            alpha = value;
+          }
+          if (alpha >= beta) {
+            return alpha;
+          }
+          if (max > min) {
+            min = max;
+            next = i;
+          }
+        }
+      }
+    }
+    return depth ? max || 0 : next;
+  };
 
   }]);
 
