@@ -10,4 +10,4 @@
 7. Zipline: Stylize Stories on Camper News: http://codepen.io/pwdd/full/JYrgjB/
 8. Zipline: Build a Wikipedia Viewer: http://pwdd.github.io/wikiview/
 9. Zipline: Build a Tic Tac Toe Game: http://pwdd.github.io/ttt/
-10. Zipline: Build a Simon Game: getting there
+10. Zipline: Build a Simon Game: http://pwdd.github.io/simon_game
