@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Open+Sans:400,700:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
+  <title>Zipline: Build a Simon Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <h1>Zipline: Build a Simon Game</h1>
+      <div id="fcc">
+        <a href="http://freecodecamp.com">Free Code Camp</a> project
+        | 
+        <a href="http://github.com">source code</a>
+      </div>
+
+      <div class="center">
+        <div id="the-game">
+          <div id="green" data-value="1">
+            <audio preload="auto" id="1">
+              <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" 
+              type="audio/mpeg">
+            </audio>
+          </div>
+          <div id="red" data-value="2">
+            <audio preload="auto" id="2">
+              <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" 
+              type="audio/mpeg">
+            </audio>
+          </div>
+          <div id="yellow" data-value="3">
+            <audio preload="auto" id="3">
+              <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"
+              type="audio/mpeg">
+            </audio>
+          </div>
+          <div id="blue" data-value="4">
+            <audio preload="auto" id="4">
+              <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"
+              type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+
+        <div class="controls">
+          <span class="button" id="count">0</span> 
+          <span class="button" id="start">start</span> 
+          <span class="button" id="strict">strict OFF</span>
+          <div id="message"></div>
+        </div>
+      </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

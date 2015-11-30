@@ -1,0 +1,48 @@
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background: url('https://images.unsplash.com/32/9FybtVFNSEOxogGzIvHJ_IMG_2226.jpg?q=80&fm=jpg&s=40ae6d5324ef525bda977695e421ff74') no-repeat fixed center;
+  background-size: cover;
+  height: 100vh;
+  padding: 50px;
+}
+
+.bg {
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid white;
+  min-height: 390px
+}
+
+#quote {
+  font-size: 30px;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: black;
+}
+
+#book {
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
+  margin-top: 30px
+}
+
+.button {
+  margin-top: 40px;
+}
+
+.credit {
+  margin-top: 20px;
+  color: black;
+}
+
+@media (min-width: 580px) {
+  .credit {
+    position: absolute;
+    bottom: 10px;
+    color: black;
+  }
+}
