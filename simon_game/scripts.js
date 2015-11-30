@@ -62,6 +62,9 @@ $(function() {
       game.showCount();
       game.changeSpeed();
       game.gameSequence.push(getRandomNumber());
+      // setting copy = gamesequence will not work. 
+      // #%@%@%^#^$%^
+      // http://stackoverflow.com/questions/7486085/copying-array-by-value-in-javascript
       game.copy = game.gameSequence.slice(0);
       game.animateSequence(game.gameSequence);
     };
@@ -72,6 +75,7 @@ $(function() {
       var interval = setInterval(function() {
         var value = (sequence[i]).toString();
         var div = $('#the-game').find("[data-value='" + value + "']");
+        // gettting audio as jQuery obj does not work
         var audio = document.getElementById(value);
         audio.play();
         game.changeColor(div);
@@ -92,9 +96,11 @@ $(function() {
     };
 
     this.collectClick = function(e) {
-      // pop out the first element of sequence (copy) and return element
+      // instead of comparing an array of user clicks and the game sequence
+      // use a copy that will be rebuilding itself at each new state
       this.message = "";
       this.changeMessage();
+      // pop out the first element of sequence (copy) and return element
       var rightAnswer = this.copy.shift(); 
       // the data-value of clicked element
       var collectedAnswer = $(e.target).data('value');
@@ -159,6 +165,8 @@ $(function() {
 
   game = new Game();
   game.init();
+
+  // with an immense help from here: https://github.com/kellyk/javascript-simon
 });
 
 
