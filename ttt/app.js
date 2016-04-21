@@ -211,6 +211,7 @@ var Board = function() {
       var min = -infinity;
       var max, value, next, undefinedValue;
       if (value = $scope.checkWinner() || depth == maxDepth) {
+        console.log(value * currentPlayer;)
         return value * currentPlayer;
       }
       if (maxDepth > depth) {
