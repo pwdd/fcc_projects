@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "username": "pwdd",
+    "repositoryName": "pwdd.github.io",
+    "branch": "gh-pages"
+  },
+  "theme": {
+    "name": "Ghost"
+  }
+}
